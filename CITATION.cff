@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated published paper."
+title: "Case Adaptive Detection Models for Asbestos-Containing Building Materials Based on Hyperspectral Image Processing"
+authors:
+  - family-names: Sim
+    given-names: Hyeji
+  - family-names: Yu
+    given-names: Jaehyung
+  - family-names: Wang
+    given-names: Lei
+  - family-names: Park
+    given-names: Chanhyeok
+  - family-names: Huynh
+    given-names: Huy Hoa
+  - family-names: Kim
+    given-names: Hyun-Cheol
+  journal: IEEE Transactions on Geoscience and Remote Sensing
+  volume: "63"
+  year: 2025
+  article-number: "5533822"
+  doi: 10.1109/TGRS.2025.3636112
+  url: https://doi.org/10.1109/TGRS.2025.3636112
