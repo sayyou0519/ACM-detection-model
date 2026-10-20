@@ -1,12 +1,27 @@
 # ACM-detection-model
 Random Forest-Based Hyperspectral Classification Pipeline
 
-This repository contains the implementation code for performing pixel-wise classification of hyperspectral imagery using a pretrained Random Forest (RF) model.
-The pipeline includes model inference, spectral band selection, RGB visualization, class overlay generation, and export of both GeoTIFF and high-resolution PNG outputs.
+This repository contains code for pixel-wise inference on hyperspectral imagery using a pretrained Random Forest (RF) model. It provides inference and visualization utilities, including spectral band selection, RGB visualization, class overlays, and GeoTIFF/PNG export.
 
-This code was developed for the study submitted to the IEEE Transactions on Geoscience and Remote Sensing (TGRS).
+## Associated publication
 
-# Features
+This repository is associated with the following published research:
+
+> Hyeji Sim, Jaehyung Yu, Lei Wang, Chanhyeok Park, Huy Hoa Huynh, and Hyun-Cheol Kim, “Case Adaptive Detection Models for Asbestos-Containing Building Materials Based on Hyperspectral Image Processing,” *IEEE Transactions on Geoscience and Remote Sensing*, vol. 63, article no. 5533822, 2025. https://doi.org/10.1109/TGRS.2025.3636112
+
+The paper was published in 2025. This repository provides public Random Forest inference code associated with the research. It does not contain or claim to reproduce the complete model training, experimental validation, or all analyses reported in the paper.
+
+### How to cite
+
+If you use this repository, please cite the associated paper:
+
+```text
+H. Sim, J. Yu, L. Wang, C. Park, H. H. Huynh, and H.-C. Kim, “Case Adaptive Detection Models for Asbestos-Containing Building Materials Based on Hyperspectral Image Processing,” IEEE Transactions on Geoscience and Remote Sensing, vol. 63, Art. no. 5533822, 2025, doi: 10.1109/TGRS.2025.3636112.
+```
+
+A machine-readable citation is provided in [CITATION.cff](CITATION.cff).
+
+## Features
 
 - Pixel-wise Random Forest classification
 - Band selection for feature extraction
@@ -16,7 +31,7 @@ This code was developed for the study submitted to the IEEE Transactions on Geos
 - High-resolution PNG export
 - GeoTIFF export preserving original metadata
 
-  # Repository Structure
+## Repository structure
 
 ```
 ├── rf_predict.py                 # Main prediction and visualization script
@@ -30,45 +45,30 @@ This code was developed for the study submitted to the IEEE Transactions on Geos
 └── README.md
 ```
 
+## Requirements
 
-
-# Requirements
 Install necessary Python packages:
-```
+
+```bash
 pip install numpy rasterio joblib matplotlib
 ```
 
-# How to Run
-1. Prepare Inputs
+## How to run
 
-Hyperspectral image (GeoTIFF)
+1. Prepare a hyperspectral image in GeoTIFF format and a trained RF model in joblib format.
+2. Execute the script:
 
-Trained RF model (joblib format)
-
-2. Execute the script
-```  
+```bash
 python rf_predict.py
 ```
 
-This will perform:
+The script performs image loading, band selection, RF inference, RGB visualization, class overlay creation, GeoTIFF export, and 300 dpi PNG visualization export.
 
-- Image loading
-- Band selection
-- RF model inference
-- RGB visualization
-- Class overlay creation
-- GeoTIFF export
-- 300 dpi PNG visualization export
+## Output files
 
-
-
-  # Output files
-
- | File                     | Description                     |
-| ------------------------ | ------------------------------- |
-| `RF_prediction.tif`      | GeoTIFF predicted label map     |
-| `RF_overlay_300dpi.png`  | RGB composite + Class 1 overlay |
-| `RF_prediction_gray.png` | Grayscale label map             |
-| `RF_class1_mask.png`     | Custom-colored mask for Class 1 |
-
-
+| File | Description |
+| --- | --- |
+| `RF_prediction.tif` | GeoTIFF predicted label map |
+| `RF_overlay_300dpi.png` | RGB composite with Class 1 overlay |
+| `RF_prediction_gray.png` | Grayscale label map |
+| `RF_class1_mask.png` | Custom-colored mask for Class 1 |
